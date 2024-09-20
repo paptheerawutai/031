@@ -86,6 +86,7 @@ const fetchAlarmData = async () => {
   try {
     const response = await axios.get('https://api2-one-iota.vercel.app/api/alarm1');
     const data = response.data;
+    console.log(data);
     io.emit('alarmData', data); 
   } catch (error) {
     console.error('Error fetching alarm data:', error.message);  
@@ -98,6 +99,7 @@ const fetchAlarmData1 = async () => {
   try {
     const response = await axios.get('https://api2-one-iota.vercel.app/api/msg');
     const data = response.data;
+    console.log(data);
     io.emit('alarmData1', data); 
   } catch (error) {
     console.error('Error fetching alarm data:', error.message); 
@@ -109,6 +111,6 @@ const fetchAlarmData1 = async () => {
 setInterval(fetchAlarmData1, 400);
 setInterval(fetchAlarmData, 400);
 
-server.listen(5000, () => {
+server.listen(10000, () => {
   console.log('Server is running on port 5000');
 });
