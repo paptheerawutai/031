@@ -84,7 +84,7 @@ io.on('connection', (socket) => {
 // ดึงข้อมูลจาก API ทุก 500ms แล้วส่งให้ client ผ่าน WebSocket
 const fetchAlarmData = async () => {
   try {
-    const response = await axios.get('https://api2-one-iota.vercel.app/api/alarm1');
+    const response = await axios.get('https://api2-3jym.onrender.com/api/alarm1');
     const data = response.data;
     console.log(data);
     io.emit('alarmData', data); 
@@ -97,7 +97,7 @@ const fetchAlarmData = async () => {
 // ดึงข้อมูลจาก API ทุก 500ms แล้วส่งให้ client ผ่าน WebSocket
 const fetchAlarmData1 = async () => {
   try {
-    const response = await axios.get('https://api2-one-iota.vercel.app/api/msg');
+    const response = await axios.get('https://api2-3jym.onrender.com/api/msg');
     const data = response.data;
      console.log(data);
     io.emit('alarmData1', data); 
